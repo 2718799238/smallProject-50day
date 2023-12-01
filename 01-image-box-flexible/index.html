@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 50%;
+        height: 100vh;
+      }
+      .container {
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .container ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: left;
+      }
+      .item {
+        list-style: none;
+        flex: 1;
+        height: 100%;
+        background-color: pink;
+        margin: 0 10px;
+        transition: all 1s ease;
+        border-radius: 50px;
+        cursor: pointer;
+        background-size: cover;
+      }
+      .active {
+        flex: 11;
+        width: 60%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li class="item active"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+      </ul>
+    </div>
+    <script>
+      const items = document.querySelectorAll(".item");
+      items.forEach((item, index) => {
+        item.style.backgroundImage = `url('./asset/0${index + 1}.webp')`;
+        item.addEventListener("click", () => {
+          items.forEach((item, index) => {
+            item.classList.remove("active");
+          });
+          item.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
