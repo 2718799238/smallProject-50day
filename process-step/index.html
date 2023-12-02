@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+      }
+      .contain {
+        width: 520px;
+        height: 210px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .contain::before {
+        content: "";
+        width: 60%;
+        height: 1.5%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #e0e0e0;
+      }
+      .process {
+        width: 0%;
+        height: 1.5%;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(0, -50%);
+        background-color: #3498db;
+        transition: all 1s ease;
+      }
+      ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20%;
+      }
+      .item-circle {
+        list-style: none;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background-color: #fff;
+        text-align: center;
+        line-height: 23px;
+        z-index: 999;
+        border: 2px solid #e0e0e0;
+        transition: all 0.5s ease;
+        transition-delay: 0.6s;
+      }
+      .active {
+        border: 2px solid #3498db;
+      }
+      .btn {
+        position: absolute;
+        left: 50%;
+        bottom: 15%;
+        transform: translateX(-50%);
+      }
+      button {
+        width: 100px;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        background-color: #3498db;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <div class="process"></div>
+      <ul>
+        <li class="item-circle active">1</li>
+        <li class="item-circle">2</li>
+        <li class="item-circle">3</li>
+        <li class="item-circle">4</li>
+      </ul>
+      <div class="btn">
+        <button class="pre">Prev</button>
+        <button class="next">Next</button>
+      </div>
+    </div>
+    <script>
+      const prevEL = document.querySelector(".pre");
+      const nextEL = document.querySelector(".next");
+      const processEL = document.querySelector(".process");
+      const itemEL = document.querySelectorAll(".item-circle");
+      const total = itemEL.length - 1;
+      let currentIndex = 0;
+      prevEL.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex--;
+          //   console.log(currentIndex);
+          for (let i = 3; i >= currentIndex; i--) {
+            console.log(i);
+            itemEL[i].classList.remove("active");
+          }
+          processEL.style.width = `${20 * currentIndex}%`;
+        }
+        if (currentIndex === 0) itemEL[0].classList.add("active");
+      });
+      nextEL.addEventListener("click", () => {
+        if (currentIndex < total) {
+          currentIndex++;
+          console.log(currentIndex);
+          for (let i = 0; i <= currentIndex; i++) {
+            itemEL[i].classList.add("active");
+          }
+          processEL.style.width = `${20 * currentIndex}%`;
+        } else {
+          nextEL.style.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>
