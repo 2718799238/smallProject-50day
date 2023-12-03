@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assest/font_quvyd5mgywa/iconfont.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        /* overflow-x: hidden; */
+      }
+      .container {
+        width: 100vw;
+        min-height: 100vh;
+        padding: 100px;
+        transform-origin: top left;
+      }
+      .content {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      img {
+        overflow-clip-margin: content-box;
+        max-width: 100%;
+      }
+      .circle {
+        width: 200px;
+        height: 200px;
+        background-color: #ff7979;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: translate(-50%, -50%);
+      }
+      .c {
+        position: absolute;
+        left: 120px;
+        top: 125px;
+      }
+      .active {
+        transform: rotate(-10deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="circle">
+        <span class="c icon iconfont">&#xf012b;</span>
+        <span style="display: none" class="c icon iconfont">&#xf012b;</span>
+      </div>
+      <div class="content">
+        <h1>Amazing Article</h1>
+        <h6>Florin Pop</h6>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+          quia in ratione dolores cupiditate, maxime aliquid impedit dolorem nam
+          dolor omnis atque fuga labore modi veritatis porro laborum minus,
+          illo, maiores recusandae cumque ipsa quos. Tenetur, consequuntur
+          mollitia labore pariatur sunt quia harum aut. Eum maxime dolorem
+          provident natus veritatis molestiae cumque quod voluptates ab non,
+          tempore cupiditate? Voluptatem, molestias culpa. Corrupti, laudantium
+          iure aliquam rerum sint nam quas dolor dignissimos in error placeat
+          quae temporibus minus optio eum soluta cupiditate! Cupiditate saepe
+          voluptates laudantium. Ducimus consequuntur perferendis consequatur
+          nobis exercitationem molestias fugiat commodi omnis. Asperiores quia
+          tenetur nemo ipsa.
+        </p>
+        <h3>My Dog</h3>
+        <img
+          src="./assest/image/photo-1507146426996-ef05306b995a.webp"
+          alt=""
+        />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit libero
+          deleniti rerum quo, incidunt vel consequatur culpa ullam. Magnam
+          facere earum unde harum. Ea culpa veritatis magnam at aliquid.
+          Perferendis totam placeat molestias illo laudantium? Minus id minima
+          doloribus dolorum fugit deserunt qui vero voluptas, ut quia cum amet
+          temporibus veniam ad ea ab perspiciatis, enim accusamus asperiores
+          explicabo provident. Voluptates sint, neque fuga cum illum, tempore
+          autem maxime similique laborum odio, magnam esse. Aperiam?
+        </p>
+      </div>
+    </div>
+    <script>
+      const containerEl = document.querySelector(".container");
+      const circleEl = document.querySelector(".circle");
+      const cEl = document.querySelector(".c");
+      circleEl.addEventListener("click", () => {
+        containerEl.classList.add("active");
+      });
+    </script>
+  </body>
+</html>

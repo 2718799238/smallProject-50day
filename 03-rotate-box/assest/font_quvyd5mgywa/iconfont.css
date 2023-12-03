@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url("iconfont.ttf?t=1701572167637") format("truetype");
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 36px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouye:before {
+  content: "\f012b";
+}
+
+.icon-liebiao:before {
+  content: "\e602";
+}
+
+.icon-xiaoxitongzhi:before {
+  content: "\ec35";
+}
+
+.icon-geren:before {
+  content: "\e601";
+}
