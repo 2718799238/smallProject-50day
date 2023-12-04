@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: pink;
+      }
+      .contain {
+        height: 50px;
+        background: #fff;
+        position: relative;
+      }
+      .input {
+        /* position: absolute; */
+        height: 50px;
+        width: 50px;
+        border: none;
+        outline: 0;
+        transition: all 0.3s ease;
+        writing-mode: horizontal-tb !important;
+      }
+      .btn {
+        transition: all 0.3s ease;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: none;
+        background-color: #fff;
+        left: 0;
+        top: 0;
+        /* transform: translateX(0); */
+      }
+
+      .contain.active .input {
+        width: 200px;
+      }
+      .contain.active .btn {
+        transform: translateX(198px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <input type="text" class="input" placeholder="Search..." />
+      <button class="btn">搜索</button>
+    </div>
+    <script>
+      const btn = document.querySelector(".btn");
+      const contain = document.querySelector(".contain");
+      btn.addEventListener("click", function () {
+        contain.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

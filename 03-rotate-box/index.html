@@ -12,13 +12,15 @@
         box-sizing: border-box;
       }
       body {
-        /* overflow-x: hidden; */
+        overflow-x: hidden;
+        background-color: black;
       }
       .container {
         width: 100vw;
         min-height: 100vh;
         padding: 100px;
         transform-origin: top left;
+        background-color: #fff;
       }
       .content {
         max-width: 1000px;
@@ -44,16 +46,16 @@
         top: 125px;
       }
       .active {
-        transform: rotate(-10deg);
+        transform: rotate(-15deg);
       }
     </style>
   </head>
   <body>
+    <div class="circle">
+      <span class="c icon iconfont">&#xf012b;</span>
+      <span style="display: none" class="c icon iconfont">&#xf012b;</span>
+    </div>
     <div class="container">
-      <div class="circle">
-        <span class="c icon iconfont">&#xf012b;</span>
-        <span style="display: none" class="c icon iconfont">&#xf012b;</span>
-      </div>
       <div class="content">
         <h1>Amazing Article</h1>
         <h6>Florin Pop</h6>
@@ -90,10 +92,11 @@
     </div>
     <script>
       const containerEl = document.querySelector(".container");
+      const contentEl = document.querySelector(".content");
       const circleEl = document.querySelector(".circle");
       const cEl = document.querySelector(".c");
       circleEl.addEventListener("click", () => {
-        containerEl.classList.add("active");
+        contentEl.classList.add("active");
       });
     </script>
   </body>
